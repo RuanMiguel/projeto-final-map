@@ -1,4 +1,4 @@
-package framework;
+package framework.cards;
 
 public class Card {
     private final String naipe;

@@ -1,4 +1,5 @@
-package framework;
+package framework.cards;
+
 import java.util.ArrayList;
 import java.util.List;
 

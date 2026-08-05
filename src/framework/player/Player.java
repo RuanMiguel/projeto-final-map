@@ -1,4 +1,6 @@
-package framework;
+package framework.player;
+
+import framework.cards.Hand;
 
 public class Player {
     private String name;

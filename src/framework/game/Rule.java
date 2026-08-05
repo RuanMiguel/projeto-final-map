@@ -1,4 +1,6 @@
-package framework;
+package framework.game;
+
+import framework.player.Player;
 
 public class Rule {
     boolean GameFinished(Game game) {
