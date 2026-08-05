@@ -3,20 +3,20 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
-    private List<Cards> cards;
+    private List<Card> card;
 
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(card);
     }
 
-    public Cards deal() {
-        if (cards.isEmpty()) {
+    public Card deal() {
+        if (card.isEmpty()) {
             return null;
         }
-        return cards.removeFirst();
+        return card.removeFirst();
     }
 
     public int size() {
-        return cards.size();
+        return card.size();
     }
 }
