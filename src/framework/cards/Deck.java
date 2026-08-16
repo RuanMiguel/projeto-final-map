@@ -7,7 +7,7 @@ public class Deck {
     private List<Card> card;
 
     public Deck(List<Card> cards) {
-        this.card = card;
+        this.card = cards;
     }
 
     public void shuffle() {

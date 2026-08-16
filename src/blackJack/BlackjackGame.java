@@ -11,7 +11,7 @@ import java.util.List;
 public class BlackjackGame extends Game {
     private DeckFactory deckFactory = new BlackJackDeckFactory();
     private DealStrategy dealStrategy = new BlackjackDealStrategy();
-    private Rule rule = new BlackJackRule();
+    private Rule regra = new Rule();
 
     protected void createDeck() {
         deck = deckFactory.createDeck();

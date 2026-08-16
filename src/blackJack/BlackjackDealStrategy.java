@@ -9,8 +9,8 @@ public class BlackjackDealStrategy implements DealStrategy {
     public void deal(Deck deck, List<Player> players) {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < players.size(); j++) {
-                Player p = players.get(j);
-                p.getHand().addCard(deck.deal());
+                Player jogador = players.get(j);
+                jogador.getHand().addCard(deck.deal());
             }
         }
     }

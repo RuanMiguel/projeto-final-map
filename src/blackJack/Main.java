@@ -8,15 +8,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // cria jogadores
+
         List<Player> players = new ArrayList<>();
         players.add(new Player("Jogador 1"));
         players.add(new Player("Dealer"));
 
-        // cria e embaralha o baralho
         BlackJackDeckFactory factory = new BlackJackDeckFactory();
         Deck deck = factory.createDeck();
-        System.out.println("Cartas no baralho: " + deck.size());
+        System.out.println("Cartas: " + deck.size());
         deck.shuffle();
 
         // distribui 2 cartas para cada jogador
