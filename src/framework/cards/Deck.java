@@ -4,24 +4,24 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
-    private List<Card> card;
+    private List<CardDecorator> cardDecorator;
 
-    public Deck(List<Card> cards) {
-        this.card = cards;
+    public Deck(List<CardDecorator> cardDecorators) {
+        this.cardDecorator = cardDecorators;
     }
 
     public void shuffle() {
-        Collections.shuffle(card);
+        Collections.shuffle(cardDecorator);
     }
 
-    public Card deal() {
-        if (card.isEmpty()) {
+    public CardDecorator deal() {
+        if (cardDecorator.isEmpty()) {
             return null;
         }
-        return card.removeFirst();
+        return cardDecorator.removeFirst();
     }
 
     public int size() {
-        return card.size();
+        return cardDecorator.size();
     }
 }
