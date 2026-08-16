@@ -1,16 +1,16 @@
 package framework.cards;
 
 public class Card {
-    private final String naipe;
+    private final String tipo;
     private final String valor;
 
     public Card(String naipe, String valor) {
-        this.naipe = naipe;
+        this.tipo = naipe;
         this.valor = valor;
     }
 
     public String getNaipe() {
-        return naipe;
+        return tipo;
     }
     public String getValor() {
         return valor;

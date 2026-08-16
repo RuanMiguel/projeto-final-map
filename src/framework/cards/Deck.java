@@ -6,6 +6,10 @@ import java.util.List;
 public class Deck {
     private List<Card> card;
 
+    public Deck(List<Card> cards) {
+        this.card = card;
+    }
+
     public void shuffle() {
         Collections.shuffle(card);
     }
