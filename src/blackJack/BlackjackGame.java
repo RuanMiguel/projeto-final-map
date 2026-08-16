@@ -13,6 +13,10 @@ public class BlackjackGame extends Game {
     private DealStrategy dealStrategy = new BlackjackDealStrategy();
     private Rule regra = new Rule();
 
+    public BlackjackGame(List<Player> players, Rule rule, DeckFactory deckFactory, DealStrategy dealStrategy) {
+        super(players, rule, deckFactory, dealStrategy);
+    }
+
     protected void createDeck() {
         deck = deckFactory.createDeck();
 

@@ -1,16 +1,27 @@
 package framework.game;
 
 import framework.cards.Deck;
+import framework.factory.DeckFactory;
 import framework.player.Player;
+import framework.strategy.DealStrategy;
 
 import java.util.List;
 
 public abstract class Game {
     protected Deck deck;
-    private List<Player> players;
-    private Rule rule;
+    protected List<Player> players;
+    protected Rule rule;
+    protected DeckFactory deckFactory;
+    protected DealStrategy dealStrategy;
 
-    public void start(){
+    public Game(List<Player> players, Rule rule, DeckFactory deckFactory, DealStrategy dealStrategy) {
+        this.players = players;
+        this.rule = rule;
+        this.deckFactory = deckFactory;
+        this.dealStrategy = dealStrategy;
+    }
+
+    public void start() {
         createDeck();
         shuffle();
         dealCards();
@@ -18,9 +29,26 @@ public abstract class Game {
         finish();
     }
 
-    protected abstract void createDeck();
-    protected abstract void shuffle();
-    protected abstract void dealCards();
+    protected void createDeck() {
+        deck = deckFactory.createDeck();
+    }
+
+    protected void shuffle() {
+        deck.shuffle();
+    }
+
+    protected void dealCards() {
+        dealStrategy.deal(deck, players);
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public Rule getRule() {
+        return rule;
+    }
+
     protected abstract void rounds();
     protected abstract void finish();
 }
