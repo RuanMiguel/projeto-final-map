@@ -7,9 +7,6 @@ public class CardDecorator implements Card {
         this.wrappedCard = card;
     }
 
-    public CardDecorator(String tipo, String valore) {
-    }
-
     @Override
     public String getTipo() {
         return wrappedCard.getTipo();

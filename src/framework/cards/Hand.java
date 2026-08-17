@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hand {
-    private List<CardDecorator> cardDecorators;
+    private List<Card> cards;
 
     public Hand() {
-        this.cardDecorators = new ArrayList<>();
+        this.cards = new ArrayList<>();
     }
 
-    public void addCard(CardDecorator cardDecorator) {
-        cardDecorators.add(cardDecorator);
+    public void addCard(Card card) {
+        cards.add(card);
     }
 
-    public void removeCard(CardDecorator cardDecorator) {
-        cardDecorators.remove(cardDecorator);
+    public void removeCard(Card card) {
+        cards.remove(card);
     }
 
-    public List<CardDecorator> getCard() {
-        return cardDecorators;
+    public List<Card> getCards() {
+        return cards;
     }
 }

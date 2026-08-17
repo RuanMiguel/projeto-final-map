@@ -40,7 +40,7 @@ public class BlackjackRule extends Rule {
         int pontuacao = 0;
         int as = 0;
 
-        for (Card card : player.getHand().getCard()) {
+        for (Card card : player.getHand().getCards()) {
             String valor = card.getValor();
 
             if (valor.equals("A")) {
