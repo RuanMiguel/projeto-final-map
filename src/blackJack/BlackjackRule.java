@@ -5,8 +5,24 @@ import framework.game.Game;
 import framework.game.Rule;
 import framework.player.Player;
 
+/**
+ * Implementa as regras do jogo Blackjack.
+ *
+ * É responsável por verificar o término da partida,
+ * determinar o vencedor e calcular a pontuação dos jogadores.
+ */
 public class BlackjackRule extends Rule {
 
+    /**
+     * Verifica se a partida de Blackjack foi finalizada.
+     *
+     * A partida é considerada finalizada quando não existem jogadores
+     * ou quando algum jogador atinge ou ultrapassa 21 pontos.
+     *
+     * @param game jogo que será avaliado
+     * @return {@code true} se a partida estiver finalizada;
+     *         {@code false} caso contrário
+     */
     @Override
     public boolean gameFinished(Game game) {
         if (game.getPlayers().isEmpty()) {
@@ -21,6 +37,12 @@ public class BlackjackRule extends Rule {
         return false;
     }
 
+    /**
+     * Determina o jogador com a maior pontuação sem ultrapassar 21.
+     *
+     * @param game jogo que será avaliado
+     * @return jogador vencedor ou {@code null} caso não exista vencedor
+     */
     @Override
     public Player checkWinner(Game game) {
         Player vencedor = null;
@@ -36,6 +58,17 @@ public class BlackjackRule extends Rule {
         return vencedor;
     }
 
+    /**
+     * Calcula a pontuação de um jogador no Blackjack.
+     *
+     * As cartas numéricas possuem seu próprio valor, enquanto
+     * J, Q, K e 10 valem 10 pontos. O Ás inicialmente vale
+     * 11 pontos e pode ser convertido para 1 ponto quando
+     * necessário para evitar que a pontuação ultrapasse 21.
+     *
+     * @param player jogador cuja pontuação será calculada
+     * @return pontuação atual do jogador
+     */
     public int calculateScore(Player player) {
         int pontuacao = 0;
         int as = 0;
