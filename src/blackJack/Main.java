@@ -4,6 +4,7 @@ import framework.player.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+/// Classe principal responsável por iniciar uma partida de Blackjack.
 public class Main {
     public static void main(String[] args) {
         List<Player> players = new ArrayList<>();
