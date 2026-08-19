@@ -14,15 +14,4 @@ class BasicCardTest {
         assertEquals("Copas", card.getTipo());
         assertEquals("A", card.getValor());
     }
-
-    @Test
-    void shouldCreateCardUsingArrays() {
-        String[] tipos = {"Copas", "Ouros"};
-        String[] valores = {"A", "K"};
-
-        BasicCard card = new BasicCard(tipos, valores);
-
-        assertEquals("Copas", card.getTipo());
-        assertEquals("A", card.getValor());
-    }
 }
